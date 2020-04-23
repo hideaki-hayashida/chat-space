@@ -17,30 +17,27 @@ Things you may want to cover:
 |------|----|-------|
 |email|string|null: false|
 |password|string|null: false|
-|name|string|null: false|
-|id|integer|null false|
+|name|string|null: false index: true|
 ### Association
-- has_many :posts through: :group_id
-- has_many :groups
+- has_many :posts 
+- has_many :users through: :groups
 
 ## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null false|
 |name|string|null false|
-|user_id|integer|null: false, foreign_key: true|
-|post_id|integer|null: false, foreign_key: true|
+
 ### Association
-- has_many :posts through: :user_id
-- has_many :users
+- has_many :posts 
+- has_many :users through: :groups
 
 ## postテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null false|
-|post|text|null false|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|text|text|
+|image|string|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 ### Association
 - belong_to :user
 - belong_to :group
