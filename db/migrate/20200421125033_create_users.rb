@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :Password, null: false
       t.timestamps
 
-      has_many :posts through: :group_id
+      has_many :posts through: :groups
       has_many :groups
     end
   end
