@@ -6,8 +6,9 @@ class CreateGroups < ActiveRecord::Migration[5.0]
       t.references :post_id, :foreign_key: true
       t.timestamps
 
-      belong_to :posts
-      belong_to :users
+      has_many :posts 
+      has_many :users, through: :groups_users
+      has_many :groups_users
     end
   end
 end

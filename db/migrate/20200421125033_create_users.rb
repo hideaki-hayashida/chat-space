@@ -6,8 +6,9 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :Password, null: false
       t.timestamps
 
-      has_many :posts through: :groups
-      has_many :groups
+      has_many :posts 
+      has_many :groups, through: :groups_users
+      has_many :groups_users
     end
   end
 end
