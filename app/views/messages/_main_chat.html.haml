@@ -1,0 +1,45 @@
+.chat-main
+  .group-info
+    .group-info__left-box
+      .group-info__left-box__group-name
+        sss
+      .group-info__left-box__member
+        .group-info__left-box__member-info
+          Member:
+        .group-info__left-box__member-name
+          aaaa
+    .group-info__right-box
+      = link_to "#" , class: "group-info__right-box__edit" do
+        ="Edit"
+
+  .message-list
+    .message
+      .message__top-info 
+        .message__top-info__talker
+          zzz
+        .message__top-info__date 
+          sss
+      .messages 
+        aaaa
+      
+    .message
+      .message__top-info 
+        .message__top-info__talker  
+          zzzz
+        .message__top-info__date 
+          sss
+      .messages 
+        aaaa
+ 
+  .message-form
+    .new-message
+      .new-message__input-box
+        %input.text-box{:name => "text", :placeholder => "type a message"}
+        .new-message__input-box__image
+          %label{class: "image-icon"}
+            = icon('fas', 'image')
+            %input{type: "file", class:"image-file"}
+
+      .send-btn
+        Send
+          
