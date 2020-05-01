@@ -4,18 +4,19 @@
       .user-name__box__name masa
       .user-name__box__icon
         .user-name__box__icon__new-group
-          = link_to "/groups/new" do
+          = link_to new_group_path do
             = icon('fas', 'edit')
         .user-name__box__icon__edit-user
           = link_to "/users/edit" do
             =  icon('fas', 'cog')
         
   .group-list
-    .group-list__groups
-      .group-list__groups__name あああ
-      .group-list__groups__message まだメッセージはありません
-    .group-list__groups
-      .group-list__groups__name あああ
-      .group-list__groups__message まだメッセージはありません
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#' do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。
 
     
