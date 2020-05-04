@@ -2,14 +2,15 @@
   .group-info
     .group-info__left-box
       .group-info__left-box__group-name
-        sss
+        =@group.name
       .group-info__left-box__member
         .group-info__left-box__member-info
           Member:
         .group-info__left-box__member-name
-          aaaa
+          - @group.users.each do |user|
+            =user.name
     .group-info__right-box
-      = link_to "#" , class: "group-info__right-box__edit" do
+      = link_to edit_group_path(@group.id) , class: "group-info__right-box__edit" do
         ="Edit"
 
   .message-list
