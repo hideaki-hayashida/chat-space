@@ -52,14 +52,18 @@ $(function(){
       contentType: false
     })
     .done(function(data){
+      
       var html = buildHTML(data);
+      console.log(html);
       $('.message-list').append(html);
       $('form')[0].reset();
       $('.message-list').animate({ scrollTop: $('.message-list')[0].scrollHeight});
       $('.form__submit').prop('disabled', false);
+      
     })
-  })
-})
     .fail(function() {
       alert("メッセージ送信に失敗しました");
-});
+    });
+  })
+})
+    
