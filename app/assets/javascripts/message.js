@@ -66,7 +66,7 @@ $(function(){
     });
   })
   var reloadMessages = function() {
-    var last_message_id = $('.message:last').data("message-id");
+    var last_message_id = $('.message-list:last').data("message-id");
     $.ajax({
       url: "api/messages",
       type: 'get',
@@ -74,11 +74,10 @@ $(function(){
       data: {id: last_message_id}
     })
     .done(function(messages) {
-      console.log(messages);
       if (messages.length !== 0) {
         var insertHTML = '';
-        $.each(messages, function(i, message-list) {
-          insertHTML += buildHTML(message-list)
+        $.each(messages, function(i, message) {
+          insertHTML += buildHTML(message)
         });
         $('.message-list').append(insertHTML);
         $('.message-list').animate({ scrollTop: $('.message-list')[0].scrollHeight});
