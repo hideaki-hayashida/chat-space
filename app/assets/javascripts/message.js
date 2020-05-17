@@ -77,8 +77,8 @@ $(function(){
       console.log(messages);
       if (messages.length !== 0) {
         var insertHTML = '';
-        $.each(messages, function(i, message) {
-          insertHTML += buildHTML(message)
+        $.each(messages, function(i, message-list) {
+          insertHTML += buildHTML(message-list)
         });
         $('.message-list').append(insertHTML);
         $('.message-list').animate({ scrollTop: $('.message-list')[0].scrollHeight});
